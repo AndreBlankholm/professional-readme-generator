@@ -1,8 +1,10 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  const licensePicked = data.license[0];
+  const licensePicked = license[0];
+
   let licenseBadge = "";
+
   if (licensePicked === "MIT") {
     licenseBadge = "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
   }
@@ -18,7 +20,8 @@ function renderLicenseBadge(license) {
     licenseBadge =
       "![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)";
   }
-}
+
+};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -30,7 +33,7 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 const renderLicenseTableOfContents = (data) => {
-  if (data.License === false) {
+  if (data.license === false) {
     return "";
   } else {
     return "* [License](#license)";
@@ -38,10 +41,10 @@ const renderLicenseTableOfContents = (data) => {
 };
 
 function generateMarkdown(data) {
-  return `# ${data.Title}
-  https://github.com/${data.Github}/${data.Title}
+  return `# ${data.title}
+  https://github.com/${data.github}/${data.title}
   # Description
-  ${data.Description}
+  ${data.description}
   # Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
@@ -51,19 +54,19 @@ function generateMarkdown(data) {
   * [Questions](#questions)
   # Installation
   The following necessary dependencies must be installed to run the application properly: ${
-    data.Installation
+    data.installation
   }
   # Usage
-  In order to use this app, ${data.Usage}
-  ${renderLicenseSection(data)}
+  In order to use this app, ${data.usage}
+  ${renderLicenseBadge(data.license)}
   # Contributions
-  Contributors: ${data.Contributions}
+  Contributors: ${data.contributions}
   # Tests
-  The following is needed to run tests: ${data.Tests}
+  The following is needed to run tests: ${data.test}
   # Questions
   If you have any questions about the repository contact ${
-    data.Contributions
-  } directly at : ${data.Email}.
+    data.contributions
+  } directly at : ${data.email}.
   `;
 }
 

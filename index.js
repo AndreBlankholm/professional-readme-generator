@@ -1,7 +1,11 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-// TODO: Create an array of questions for user input
+const generateMarkdown = require("./utils/generateMarkdown");
+
+
+
+// An array of questions for user input
 const questions = [
   {
     type: "input",
@@ -58,7 +62,7 @@ const questions = [
     message: "What license is needed?",
     choices: ['MIT', 'Apache', 'Boost', 'BDS 3-Clause'],
     validate: (licenseInput) => {
-      if (lincenseInput) {
+      if (licenseInput)  {
         return true;
       } else {
         console.log("Please enter a license!");
@@ -101,7 +105,7 @@ const questions = [
     type: "input",
     name: "email",
     message: "What is your email?",
-    validate: (emailInput) => {
+    validate: (emailInput) => { 
       if (emailInput) {
         return true;
       } else {
