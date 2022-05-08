@@ -60,14 +60,14 @@ const questions = [
     type: "list",
     name: "license",
     message: "What license is needed?",
-    choices: ['MIT', 'Apache', 'Boost', 'BDS 3-Clause'],
+    choices: ['None', 'MIT', 'Apache', 'Boost', 'BDS 3-Clause'],
     validate: (licenseInput) => {
       if (licenseInput)  {
         return true;
       } else {
         console.log("Please enter a license!");
         return false;
-      }
+      } 
     },
   },
   {
@@ -130,7 +130,7 @@ function init() {
     inquirer.prompt(questions)
     .then(function(data) {
         writeToFile('README.md', generateMarkdown(data));
-        console.log(data);
+        console.log(data.license);
     })
 }
 
