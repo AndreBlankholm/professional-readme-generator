@@ -39,7 +39,7 @@ function renderLicenseSection(data) {
    return "";
 
  } else {
-   return `# Licence
+   return `# License
    ${renderLicenseBadge(data)}`;
  }
 }
