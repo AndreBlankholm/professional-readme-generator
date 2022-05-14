@@ -59,7 +59,7 @@ const renderLicenseTableOfContents = (data) => {
 function generateMarkdown(data) {
   return `# ${data.title}
   ## https://github.com/${data.github}/${data.title}
-  ## https://drive.google.com/drive/folders/1SWdw3-h0rTUxajG1Its2gzvosGnxEGxC?usp=sharing
+  ## https://drive.google.com/file/d/1qt2ULNec1a1l2RcOAIrPv-ZjNTe5ZpYt/view?usp=sharing
   # Description
   ${data.description}
   # Table of Contents
